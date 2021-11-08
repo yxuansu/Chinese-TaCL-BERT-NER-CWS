@@ -1,5 +1,5 @@
 ## 基于TaCL-BERT的中文命名实体识别及中文分词
-基于论文[**TaCL: Improve BERT Pre-training with Token-aware Contrastive Learning**]
+[**TaCL: Improve BERT Pre-training with Token-aware Contrastive Learning**]
 
 **Authors**: Yixuan Su, Fangyu Liu, Zaiqiao Meng, Lei Shu, Ehsan Shareghi, and Nigel Collier
 
