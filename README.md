@@ -146,6 +146,11 @@ tgt_mask = torch.tensor(tgt_mask, dtype=torch.uint8).contiguous().view(1,-1)
 x = model.decode(input_id, attn_mask, tgt_mask)[0][1:-1]
 res = ' '.join([data.id2label_dict[tag] for tag in x])
 print (res)
+
+# 模型输出结果: 
+# B-NT M-NT M-NT E-NT O B-NT M-NT M-NT M-NT M-NT M-NT M-NT E-NT O O O
+# 标准预测结果: 
+# B-NT M-NT M-NT E-NT O B-NT M-NT M-NT M-NT M-NT M-NT M-NT E-NT O O O
 ```
 
 
