@@ -4,6 +4,23 @@
 **Authors**: Yixuan Su, Fangyu Liu, Zaiqiao Meng, Lei Shu, Ehsan Shareghi, and Nigel Collier
 
 论文主Github repo: [https://github.com/yxuansu/TaCL](https://github.com/yxuansu/TaCL)
+
+### Citation:
+如果我们提供的资源对你有帮助，请考虑引用我们的文章。
+
+```bibtex
+@article{su2021tacl,
+   author = {Yixuan Su and
+             Fangyu Liu and
+             Zaiqiao Meng and
+             Lei Shu and
+             Ehsan Shareghi and
+             Nigel Collier},
+   title     = {TaCL: Improving BERT Pre-training with Token-aware Contrastive Learning},
+   journal   = {CoRR}
+}
+```
+
 ### 环境配置
 ```yaml
 python version == 3.8
@@ -153,21 +170,7 @@ print (res)
 # B-NT M-NT M-NT E-NT O B-NT M-NT M-NT M-NT M-NT M-NT M-NT E-NT O O O
 ```
 
-### Citation:
-如果我们提供的资源对你有帮助，请考虑引用我们的文章。
 
-```bibtex
-@article{su2021tacl,
-   author = {Yixuan Su and
-             Fangyu Liu and
-             Zaiqiao Meng and
-             Lei Shu and
-             Ehsan Shareghi and
-             Nigel Collier},
-   title     = {TaCL: Improving BERT Pre-training with Token-aware Contrastive Learning},
-   journal   = {CoRR}
-}
-```
 
 ### 联系
 如果有任何的问题，以下是我的联系方式(ys484 at outlook dot com)。
