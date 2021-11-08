@@ -126,7 +126,8 @@ chmod +x ./{}.sh
 **Inference**: 使用在./sh_folder/inference/路径中的sh进行inference。将--saved_ckpt_path设置为自己训练重新训练好的模型的路径。
 
 ## 交互式使用训练好的模型进行inference
-以下我们使用MSRA数据集作为范例。(**使用以下代码前，请先下载我们提供的训练好的模型以及数据集。具体的指导请见以上章节**)
+以下我们使用MSRA数据集作为范例。
+(**使用以下代码前，请先下载我们提供的训练好的模型以及数据集。具体的指导请见以上章节**)
 ```python
 # 载入数据
 from dataclass import Data
