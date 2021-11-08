@@ -123,7 +123,7 @@ chmod +x ./{}.sh
 
 **[Note 2]** 实际的batch size等于gradient_accumulation_steps x number_of_gpu x batch_size_per_gpu。我们推荐将其设置为128。
 
-**Inference**: 使用在./sh_folder/inference/路径中的sh进行inference。将--saved_ckpt_path设置为自己训练重新训练好的模型的路径。
+**Inference**: 使用在./sh_folder/inference/路径中的sh进行inference。将--saved_ckpt_path设置为自己重新训练好的模型的路径。
 
 ## 交互式使用训练好的模型进行inference
 以下我们使用MSRA数据集作为范例。
