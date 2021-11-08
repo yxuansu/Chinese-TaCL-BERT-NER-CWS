@@ -119,7 +119,7 @@ chmod +x ./{}.sh
 --save_path_prefix: 模型存储路径
 ```
 
-**[Note 1]** 我们没有对模型进行任何调参，2e-5只是默认值。通过调整学习率也许可以获得更好的结果。
+**[Note 1]** 我们没有对模型进行任何和学习率调参，2e-5只是默认值。通过调整学习率也许可以获得更好的结果。
 
 **[Note 2]** 实际的batch size等于gradient_accumulation_steps x number_of_gpu x batch_size_per_gpu。我们推荐将其设置为128。
 
@@ -170,9 +170,5 @@ print (res)
 # B-NT M-NT M-NT E-NT O B-NT M-NT M-NT M-NT M-NT M-NT M-NT E-NT O O O
 ```
 
-
-
 ### 联系
 如果有任何的问题，以下是我的联系方式(ys484 at outlook dot com)。
-
-
