@@ -13,6 +13,24 @@ Chinese TaCL BERT + CRF
 |:-------------:|:-------------:|
 |Chinese (**cambridgeltl/tacl-bert-base-chinese**)|[link](https://huggingface.co/cambridgeltl/tacl-bert-base-chinese)|
 
+### 使用范例:
+```python
+import torch
+# initialize model
+from transformers import AutoModel, AutoTokenizer
+model_name = 'cambridgeltl/tacl-bert-base-chinese'
+model = AutoModel.from_pretrained(model_name)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+# create input ids
+text = "中文TaCL BERT模型真强大！"
+text = "[CLS] " + text + " [SEP]"
+tokenized_token_list = tokenizer.tokenize(text)
+input_ids = torch.LongTensor(tokenizer.convert_tokens_to_ids(tokenized_token_list)).view(1, -1)
+# compute hidden states
+representation = model(input_ids).last_hidden_state # [1, seqlen, embed_dim]
+```
+
+
 ## 实验
 ### 数据集
 1. 命名实体识别: (1) MSRA (2) OntoNotes (3) Resume (4) Weibo
