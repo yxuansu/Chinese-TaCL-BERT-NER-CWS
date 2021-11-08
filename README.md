@@ -41,7 +41,7 @@ representation = model(input_ids).last_hidden_state # [1, seqlen, embed_dim]
 1. 命名实体识别: (1) MSRA (2) OntoNotes (3) Resume (4) Weibo
 2. 中文分词: (1) PKU (2) CityU (3) AS
 
-### 二、模型结果
+### 二、测试集模型结果
 |     Dataset | Precision       |Recall|F1|
 | :-------------: |:-------------:|:-----:|:-----:|
 |MSRA|95.41|95.47|95.44|
@@ -51,5 +51,20 @@ representation = model(input_ids).last_hidden_state # [1, seqlen, embed_dim]
 |PKU|97.04|96.46|96.75|
 |CityU|98.16|98.19|98.18|
 |AS|96.51|96.99|96.75|
+
+
+### 三、下载数据集
+```yaml
+chmod +x ./download_benchmark_data.sh
+./download_benchmark_data.sh
+```
+
+### 四、下载训练好的模型
+```yaml
+chmod +x ./download_checkpoints.sh
+./download_checkpoints.sh
+```
+
+
 
 
