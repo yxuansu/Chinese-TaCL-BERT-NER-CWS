@@ -22,7 +22,7 @@ model_name = 'cambridgeltl/tacl-bert-base-chinese'
 model = AutoModel.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 # create input ids
-text = "中文TaCL BERT模型真强大！"
+text = "中文TaCL-BERT模型真强大！"
 text = "[CLS] " + text + " [SEP]"
 tokenized_token_list = tokenizer.tokenize(text)
 input_ids = torch.LongTensor(tokenizer.convert_tokens_to_ids(tokenized_token_list)).view(1, -1)
