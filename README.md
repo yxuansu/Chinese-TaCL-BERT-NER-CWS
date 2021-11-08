@@ -5,7 +5,7 @@
 
 论文主Github repo: [https://github.com/yxuansu/TaCL](https://github.com/yxuansu/TaCL)
 
-### Citation:
+### 引用：
 如果我们提供的资源对你有帮助，请考虑引用我们的文章。
 
 ```bibtex
