@@ -161,7 +161,7 @@ tgt_mask = [1.0] * len(tokens)
 tgt_mask = torch.tensor(tgt_mask, dtype=torch.uint8).contiguous().view(1,-1)
 
 # 使用模型进行解码
-x = model.decode(input_id, attn_mask, tgt_mask)[0][1:-1]
+x = model.decode(input_id, attn_mask, tgt_mask)[0][1:-1] # remove [CLS] and [SEP] tokens.
 res = ' '.join([data.id2label_dict[tag] for tag in x])
 print (res)
 
