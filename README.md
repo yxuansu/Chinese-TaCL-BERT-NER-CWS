@@ -3,7 +3,7 @@
 
 **Authors**: Yixuan Su, Fangyu Liu, Zaiqiao Meng, Lei Shu, Ehsan Shareghi, and Nigel Collier
 
-主论文github repo: [https://github.com/yxuansu/TaCL](https://github.com/yxuansu/TaCL)
+论文主Github repo: [https://github.com/yxuansu/TaCL](https://github.com/yxuansu/TaCL)
 ### 环境配置
 ```yaml
 python version == 3.8
@@ -53,7 +53,25 @@ chmod +x ./download_checkpoints.sh
 ./download_checkpoints.sh
 ```
 
-### 二、测试集模型结果
+### 四、使用训练好的模型进行inference
+```yaml
+cd ./sh_folder/inference/
+chmod +x ./inference_{}.sh
+./inference_{}.sh
+```
+对于不同的数据集{}的取值为['msra', 'ontonotes', 'weibo', 'resume', 'pku', 'cityu', 'as']，相关参数的含义为:
+
+```yaml
+--saved_ckpt_path: 训练好的模型位置
+--train_path: 训练集数据路径
+--dev_path: 验证集数据路径
+--test_path: 测试集数据路径
+--label_path: 数据标签路径
+--batch_size: inference时的batch size
+```
+
+### 五、测试集模型结果
+使用提供的模型进行inference后，可以得到如下结果。
 |     Dataset | Precision       |Recall|F1|
 | :-------------: |:-------------:|:-----:|:-----:|
 |MSRA|95.41|95.47|95.44|
