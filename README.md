@@ -108,6 +108,45 @@ chmod +x ./{}.sh
 
 **Inference**: 使用在./sh_folder/inference/路径中的sh进行inference。将--saved_ckpt_path设置为自己训练重新训练好的模型的路径。
 
+## 交互式使用训练好的模型进行inference
+以下我们使用MSRA数据集作为范例。(**使用以下代码前，请先下载我们提供的训练好的模型。具体的指导请见以上章节**)
+```python
+# 载入数据
+from dataclass import Data
+from transformers import AutoTokenizer
+model_name = 'cambridgeltl/tacl-bert-base-chinese'
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+data_path = r'./benchmark_data/NER/MSRANER/MSRA.test.char.txt'
+label_path = r'./benchmark_data/NER/MSRANER/MSRA_NER_Label.txt'
+max_len = 128
+data = Data(tokenizer, data_path, data_path, data_path, label_path, max_len)
+
+# 载入模型
+import torch
+from model import NERModel
+model = NERModel(model_name, data.num_class)
+ckpt_path = r'./pretrained_ckpt/msra/msra_ckpt'
+model_ckpt = torch.load(ckpt_path, map_location=torch.device('cpu'))
+model_parameters = model_ckpt['model']
+model.load_state_dict(model_parameters)
+model.eval()
+
+# 提供输入
+text = "中 共 中 央 致 中 国 致 公 党 十 一 大 的 贺 词"
+text = "[CLS] " + text + " [SEP]"
+tokens = tokenizer.tokenize(text)
+# process token input
+input_id = tokenizer.convert_tokens_to_ids(tokens)
+input_id = torch.LongTensor(input_id).view(1, -1)
+attn_mask = ~input_id.eq(data.pad_idx)
+tgt_mask = [1.0] * len(tokens)
+tgt_mask = torch.tensor(tgt_mask, dtype=torch.uint8).contiguous().view(1,-1)
+
+# 使用模型进行解码
+x = model.decode(input_id, attn_mask, tgt_mask)[0][1:-1]
+res = ' '.join([data.id2label_dict[tag] for tag in x])
+print (res)
+```
 
 
 
