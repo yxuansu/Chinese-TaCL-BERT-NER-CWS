@@ -3,7 +3,7 @@
 
 **Authors**: Yixuan Su, Fangyu Liu, Zaiqiao Meng, Lei Shu, Ehsan Shareghi, and Nigel Collier
 
-论文主Github repo: [https://github.com/yxuansu/TaCL](https://github.com/yxuansu/TaCL)
+**Main Paper Repo**: [https://github.com/yxuansu/TaCL](https://github.com/yxuansu/TaCL)
 
 ### 引用：
 如果我们提供的资源对你有帮助，请考虑引用我们的文章。
